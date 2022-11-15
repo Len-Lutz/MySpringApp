@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Contact Us</title>
+	<div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+
+<body>
+	<div th:replace="fragments/navbar :: navbar" ></div>
+
+	<div width="100%" style="margin: auto; margin-top: 100px;">
+		<h2>Contact Us</h2>
+		<p align="center">Please use the form below to submit a Request for information:</p>
+	</div>
+	<div class="box" align="center" style="margin: auto; margin-top: 70px; margin-bottom: 70px;">
+		* indicates REQUIRED information.<br /><br />
+		<form action="#" th:action="@{/contact}" th:object="${infoRequest}" method="post">
+			<span class="right"><label>* First Name:</label></span>
+			<span><input type="text" th:field="*{firstName}" /></span><br />
+			<span class="right"><label>* Last Name:</label></span>
+			<span><input type="text" th:field="*{lastName}" /></span><br />
+			<span class="right"><label>Address 1:</label></span>
+			<span><input type="text" th:field="*{address1}" /></span><br />
+			<span class="right"><label>Address 2:</label></span>
+			<span><input type="text" th:field="*{address2}" /></span><br />
+			<span class="right"><label>City:</label></span>
+			<span><input type="text" th:field="*{city}" /></span><br />
+			<span class="right"><label>State:</label></span>
+			<span><input type="text" th:field="*{state}" /></span><br />
+			<span class="right"><label>Zip Code</label></span>
+			<span><input type="text" th:field="*{zip}" /></span><br />
+			<span class="right"><label>Phone:</label></span>
+			<span><input type="text" th:field="*{phone}" /></span><br />
+			<span class="right"><label>* E-Mail:</label></span>
+			<span><input type="text" th:field="*{eMail}" /></span><br />
+			<span class="right"><label>Preferred Contact Method:</label></span>
+			<span>
+				<input type="radio" th:field="*{prefContactMethod}" value="E-Mail" />E-Mail
+				<input type="radio" th:field="*{prefContactMethod}" value="Phone" />Phone
+				<input type="radio" th:field="*{prefContactMethod}" value="Mail" />Mail
+			</span><br />
+			<span class="right"><label>Best time to call:</label></span>
+			<span><select th:field="*{callTime}">
+				<option th:each="p : ${listCallTime}" th:value="${p}" th:text="${p}" />
+			</select></span>
+			<span class="right"><label>Your Time Zone:</label></span>
+			<span><select th:field="*{timeZone}">
+				<option th:each="p : ${listTimeZone}" th:value="${p}" th:text="${p}" />
+			</select></span><br /><br />
+			<span style="width: 500px; text-align: center;"><label>Best day(s) to call:</label><br /></span>
+			<span style="width: 500px; text-align: center;">
+				<input type="checkbox" th:field="*{okMon}" id="Mon" />
+				<label for="Mon" class="cbx">Mon</label>
+				<input type="checkbox" th:field="*{okTue}" id="Tue" />
+				<label for="Tue" class="cbx">Tue</label>
+				<input type="checkbox" th:field="*{okWed}" id="Wed" />
+				<label for="Wed" class="cbx">Wed</label>
+				<input type="checkbox" th:field="*{okThu}" id="Thu" />
+				<label for="Thu" class="cbx">Thu</label>
+				<input type="checkbox" th:field="*{okFri}" id="Fri" />
+				<label for="Fri" class="cbx">Fri</label>
+				<input type="checkbox" th:field="*{okSat}" id="Sat" />
+				<label for="Sat" class="cbx">Sat</label>
+				<input type="checkbox" th:field="*{okSun}" id="Sun" />
+				<label for="Sun" class="cbx">Sun</label>
+			</span><br /><br />
+			<span style="width:200px; text-align:center;"><label>* How can we help you?</label></span><br />
+			<span style="width:200px; display:unset; margin:auto;"><textarea rows="5" cols="60" th:field="*{infoRequested}"></textarea></span>
+			<br /><br />
+			<input type="hidden" th:field="*{dateRequested}" />
+			<button type="submit">Submit Your Request</button>
+		</form>
+	</div>
+
+	<div th:replace="/fragments/styling :: footer" ></div>
+
+</body>
+
+</html>

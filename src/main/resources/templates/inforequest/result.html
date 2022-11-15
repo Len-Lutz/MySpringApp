@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Thank You</title>
+	<div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+
+<body>
+	<div class="center">
+		<h1>Thank you!</h1>
+		<b th:text="${firstName}" style="font-size: 20pt;" /> <b th:text="${lastName}" style="font-size: 20pt;" />
+		<p>One of our staff members will contact you soon by <b th:text="${prefContactMethod}" /></p>
+	    <br /><a class="button" id="result" href="/">Continue</a>
+	</div>
+</body>
+
+</html>

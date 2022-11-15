@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome</title>
+	<div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+
+<body>
+	<div th:replace="fragments/navbar :: navbar" ></div>
+ 
+	<div class="container" style="margin: auto; margin-top: 90px; margin-bottom: 100px;">
+		<div align="center">
+			<h2>This site is for the Travel Bureau on the Imaginary Island of 'Taniti'</h2>
+			<iframe src="https://lenscameralens.com/taniti/" height="900" width="1024" title="Express Holidays"></iframe>
+		</div>
+
+	</div>
+<div th:replace="/fragments/styling :: footer" ></div>
+</body>
+
+</html>

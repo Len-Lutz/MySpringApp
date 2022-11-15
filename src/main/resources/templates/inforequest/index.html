@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome</title>
+	<div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+
+<body>
+	<div th:replace="fragments/navbar :: navbar" ></div>
+ 
+	<div class="container" style="margin: auto; margin-top: 80px; margin-bottom: 70px;">
+		<div align="center">
+			<h1>Welcome to my Website!</h1>
+			<p class="brag">Here you can find a couple previous sites that I created in my journey to learn HTML and CSS.</p>
+			<p class="brag">You can also find my Resume, with links to download copies of it in MS Word or Adobe Acrobat formats.</p>
+			<p class="brag">And, lastly, you can add your information to our database by requesting additional information on my 'Contact' page.</p>
+			<p class="brag">Please let me know what you think of my site!</p>
+		</div>
+
+	</div>
+<div th:replace="/fragments/styling :: footer" ></div>
+</body>
+
+</html>
